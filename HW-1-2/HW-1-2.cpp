@@ -3,29 +3,27 @@
 //
 #include <iostream>
 #include <cmath>
-using namespace std;
-int main()
+     using namespace std;
+     int main()
 {
-    double a;
-    double b;
-    double c;
-    double x;
-    cout <<"Enter a:";
-    cin >> a;
-    cout <<"Enter b:";
-    cin >> b;
-    cout <<"Enter c:";
-    cin >> c;
-    if  ((b * b - 4 * a * c) >= 0)
+    double factor_xx, factor_x, free_member, root;
+    cin >> factor_xx ;
+    cin >> factor_x;
+    cin >> free_member;
+
+    if  ( ( factor_x * factor_x - 4 * factor_xx * free_member ) > 0)
     {
-        x = ((-1 * b + sqrt(b * b - 4 * a * c) )/ 2 * a);
-        cout << "x=" << x << endl;
-        x = ((-1 * b - sqrt(b * b - 4 * a * c) )/ 2 * a);
-        cout << "x=" << x << endl;
+        root = ( ( -1 * factor_x + sqrt (factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
+        cout << root << endl;
+        root = ( ( -1 * factor_x - sqrt(factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
+        cout << root << endl;
     }
-    else
+
+    else if ( ( factor_x * factor_x - 4 * factor_xx * free_member) == 0 )
     {
-        cout << "No solutions" << endl;
+        root = ( ( -1 * factor_x + sqrt (factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
+        cout << root << endl;
     }
+
     return 0;
 }
