@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+
     double quadratic_coefficient, linear_coefficient, free_member, discriminant;
     cin >> quadratic_coefficient >> linear_coefficient >> free_member;
     discriminant = ((linear_coefficient * linear_coefficient) - 4 * quadratic_coefficient * free_member);
