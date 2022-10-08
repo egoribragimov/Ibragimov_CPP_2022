@@ -2,27 +2,32 @@
 // Created by Egor on 07.10.2022.
 //
 #include <iostream>
-#include <cmath>
-     using namespace std;
-     int main()
-{
-    double factor_xx, factor_x, free_member, root;
-    cin >> factor_xx ;
-    cin >> factor_x;
-    cin >> free_member;
 
-    if  ( ( factor_x * factor_x - 4 * factor_xx * free_member ) > 0)
-    {
-        root = ( ( -1 * factor_x + sqrt (factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
-        cout << root << endl;
-        root = ( ( -1 * factor_x - sqrt(factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
-        cout << root << endl;
+#include <cmath>
+
+using namespace std;
+
+int main() {
+    double quadratic_coefficient, linear_coefficient, free_member, discriminant;
+    cin >> quadratic_coefficient >> linear_coefficient >> free_member;
+    discriminant = ((linear_coefficient * linear_coefficient) - 4 * quadratic_coefficient * free_member);
+
+    if (discriminant < 0) {
+        cout << "";
     }
 
-    else if ( ( factor_x * factor_x - 4 * factor_xx * free_member) == 0 )
-    {
-        root = ( ( -1 * factor_x + sqrt (factor_x * factor_x - 4 * factor_xx * free_member) ) / ( 2 * factor_xx ) );
-        cout << root << endl;
+    else if (discriminant == 0)  {
+        cout << (-1 * linear_coefficient) / (2 * quadratic_coefficient);
+
+    }
+
+    else if (quadratic_coefficient == 0)  {
+        cout << (-1 * free_member) / linear_coefficient;
+    }
+
+    else {
+        cout << (-1 * linear_coefficient + sqrt(discriminant)) / (2 * quadratic_coefficient) << " ";
+        cout << (-1 * linear_coefficient - sqrt(discriminant)) / (2 * quadratic_coefficient);
     }
 
     return 0;
