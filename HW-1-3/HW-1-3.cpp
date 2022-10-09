@@ -4,19 +4,16 @@ using namespace std;
 
 int main() {
 
-    float fullPrice, priceX, priceY, discountX, discountY;
-    cin >> fullPrice >> priceX >> priceY >> discountX >> discountY;
+    float fullPrice, firstDiscountPrice, secondDiscountPrice, firstDiscount, secondDiscount;
+    cin >> fullPrice >> firstDiscountPrice >> secondDiscountPrice >> firstDiscount >> secondDiscount;
 
-    if (fullPrice > priceX & fullPrice <= priceY) {
-        cout << fullPrice - (fullPrice * discountX) / 100;
-        }
-
-    else if (fullPrice > priceY) {
-        cout << fullPrice - (fullPrice * discountY) / 100;
-        }
-
-    else {
+    if (fullPrice > firstDiscountPrice & fullPrice <= secondDiscountPrice) {
+        cout << fullPrice - (fullPrice * firstDiscount) / 100;
+    } else if (fullPrice > secondDiscountPrice) {
+        cout << fullPrice - (fullPrice * secondDiscount) / 100;
+    } else {
         cout << fullPrice;
     }
+
     return 0;
 }
