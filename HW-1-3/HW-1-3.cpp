@@ -4,24 +4,19 @@ using namespace std;
 
 int main() {
 
-    float N, A, B, X, Y;
-    cin >> N >> A >> B >> X >> Y;
+    float fullPrice, priceX, priceY, discountX, discountY;
+    cin >> fullPrice >> priceX >> priceY >> discountX >> discountY;
 
-    if (A > B) {
-        cout << "";
-    }
-
-    else if (A < B) {
-        if (N > A & N <= B) {
-            cout << N - (N * X) / 100;
+    if (fullPrice > priceX & fullPrice <= priceY) {
+        cout << fullPrice - (fullPrice * discountX) / 100;
         }
 
-        else if (N > B) {
-            cout << N - (N * X) / 100;
+    else if (fullPrice > priceY) {
+        cout << fullPrice - (fullPrice * discountY) / 100;
         }
 
-        else
-            cout << N;
+    else {
+        cout << fullPrice;
     }
     return 0;
 }
