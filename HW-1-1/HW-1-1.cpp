@@ -7,12 +7,14 @@ int main() {
 
     float xCoordinateFirstPoint, yCoordinateFirstPoint, xCoordinateSecondPoint, yCoordinateSecondPoint,
     xCoordinateThirdPoint, yCoordinateThirdPoint;
+    
     cin >> xCoordinateFirstPoint >> yCoordinateFirstPoint >> xCoordinateSecondPoint >> yCoordinateSecondPoint
     >> xCoordinateThirdPoint >> yCoordinateThirdPoint;
-    float distanceFromPointToLine = fabs((xCoordinateSecondPoint - xCoordinateFirstPoint) *
+    
+    double distanceFromPointToLine = fabs((xCoordinateSecondPoint - xCoordinateFirstPoint) *
             (yCoordinateFirstPoint - yCoordinateThirdPoint) - (xCoordinateFirstPoint - xCoordinateThirdPoint) *
             (yCoordinateSecondPoint - yCoordinateFirstPoint)) / sqrt((pow((xCoordinateSecondPoint -
-            xCoordinateFirstPoint),2))+ pow((yCoordinateSecondPoint - yCoordinateFirstPoint),2));
+            xCoordinateFirstPoint),2)) + pow((yCoordinateSecondPoint - yCoordinateFirstPoint),2));
     float xCoordinateOfCrossing = ((xCoordinateFirstPoint - xCoordinateSecondPoint) *
             (xCoordinateFirstPoint - xCoordinateSecondPoint) * xCoordinateThirdPoint +
             (xCoordinateSecondPoint - xCoordinateFirstPoint) * (yCoordinateSecondPoint - yCoordinateFirstPoint) *
@@ -21,6 +23,7 @@ int main() {
             yCoordinateFirstPoint) * (yCoordinateSecondPoint - yCoordinateFirstPoint) + (xCoordinateSecondPoint -
             xCoordinateFirstPoint) * (xCoordinateSecondPoint - xCoordinateFirstPoint));
     float yCoordinateOfCrossing;
+    
     if (yCoordinateSecondPoint != yCoordinateFirstPoint) {
         yCoordinateOfCrossing = ((xCoordinateFirstPoint - xCoordinateSecondPoint) * xCoordinateOfCrossing +
         (yCoordinateSecondPoint - yCoordinateFirstPoint) * yCoordinateThirdPoint +
