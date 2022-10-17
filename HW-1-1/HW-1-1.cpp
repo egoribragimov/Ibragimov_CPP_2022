@@ -5,33 +5,38 @@ using namespace std;
 
 int main() {
 
-    float xCoordinateFirstPoint, yCoordinateFirstPoint, xCoordinateSecondPoint, yCoordinateSecondPoint,
-    xCoordinateThirdPoint, yCoordinateThirdPoint;
+    float xCoordinateFirstPointLine, yCoordinateFirstPointLine, xCoordinateSecondPointLine, yCoordinateSecondPointLine,
+    xCoordinatePointOutOfLine, yCoordinatePointOutOfLine;
     
-    cin >> xCoordinateFirstPoint >> yCoordinateFirstPoint >> xCoordinateSecondPoint >> yCoordinateSecondPoint
-    >> xCoordinateThirdPoint >> yCoordinateThirdPoint;
+    cin >> xCoordinateFirstPointLine >> yCoordinateFirstPointLine >> xCoordinateSecondPointLine >>
+    yCoordinateSecondPointLine >> xCoordinatePointOutOfLine >> yCoordinatePointOutOfLine;
     
-    double distanceFromPointToLine = fabs((xCoordinateSecondPoint - xCoordinateFirstPoint) *
-            (yCoordinateFirstPoint - yCoordinateThirdPoint) - (xCoordinateFirstPoint - xCoordinateThirdPoint) *
-            (yCoordinateSecondPoint - yCoordinateFirstPoint)) / sqrt((pow((xCoordinateSecondPoint -
-            xCoordinateFirstPoint),2)) + pow((yCoordinateSecondPoint - yCoordinateFirstPoint),2));
-    float xCoordinateOfCrossing = ((xCoordinateFirstPoint - xCoordinateSecondPoint) *
-            (xCoordinateFirstPoint - xCoordinateSecondPoint) * xCoordinateThirdPoint +
-            (xCoordinateSecondPoint - xCoordinateFirstPoint) * (yCoordinateSecondPoint - yCoordinateFirstPoint) *
-            yCoordinateThirdPoint - (yCoordinateFirstPoint * xCoordinateSecondPoint - xCoordinateFirstPoint *
-            yCoordinateSecondPoint) * (yCoordinateSecondPoint - yCoordinateFirstPoint)) / ((yCoordinateSecondPoint -
-            yCoordinateFirstPoint) * (yCoordinateSecondPoint - yCoordinateFirstPoint) + (xCoordinateSecondPoint -
-            xCoordinateFirstPoint) * (xCoordinateSecondPoint - xCoordinateFirstPoint));
+    double distanceFromPointToLine = fabs((xCoordinateSecondPointLine - xCoordinateFirstPointLine) *
+    (yCoordinateFirstPointLine - yCoordinatePointOutOfLine) - (xCoordinateFirstPointLine - xCoordinatePointOutOfLine) *
+    (yCoordinateSecondPointLine - yCoordinateFirstPointLine)) / sqrt((pow((xCoordinateSecondPointLine -
+    xCoordinateFirstPointLine), 2)) + pow((yCoordinateSecondPointLine - yCoordinateFirstPointLine), 2));
+
+    float xCoordinateOfCrossing = ((xCoordinateFirstPointLine - xCoordinateSecondPointLine) *
+    (xCoordinateFirstPointLine - xCoordinateSecondPointLine) * xCoordinatePointOutOfLine +
+    (xCoordinateSecondPointLine - xCoordinateFirstPointLine) * (yCoordinateSecondPointLine - yCoordinateFirstPointLine) *
+    yCoordinatePointOutOfLine - (yCoordinateFirstPointLine * xCoordinateSecondPointLine - xCoordinateFirstPointLine *
+    yCoordinateSecondPointLine) * (yCoordinateSecondPointLine - yCoordinateFirstPointLine)) / ((yCoordinateSecondPointLine -
+    yCoordinateFirstPointLine) * (yCoordinateSecondPointLine - yCoordinateFirstPointLine) + (xCoordinateSecondPointLine -
+    xCoordinateFirstPointLine) * (xCoordinateSecondPointLine - xCoordinateFirstPointLine));
+
     float yCoordinateOfCrossing;
     
-    if (yCoordinateSecondPoint != yCoordinateFirstPoint) {
-        yCoordinateOfCrossing = ((xCoordinateFirstPoint - xCoordinateSecondPoint) * xCoordinateOfCrossing +
-        (yCoordinateSecondPoint - yCoordinateFirstPoint) * yCoordinateThirdPoint +
-        (xCoordinateSecondPoint - xCoordinateFirstPoint) * xCoordinateThirdPoint) /
-        (yCoordinateSecondPoint - yCoordinateFirstPoint);
-    } else {
-        yCoordinateOfCrossing = yCoordinateFirstPoint;
+    if (yCoordinateSecondPointLine != yCoordinateFirstPointLine) {
+    yCoordinateOfCrossing = ((xCoordinateFirstPointLine - xCoordinateSecondPointLine) * xCoordinateOfCrossing +
+    (yCoordinateSecondPointLine - yCoordinateFirstPointLine) * yCoordinatePointOutOfLine +
+    (xCoordinateSecondPointLine - xCoordinateFirstPointLine) * xCoordinatePointOutOfLine) /
+    (yCoordinateSecondPointLine - yCoordinateFirstPointLine);
     }
+    else {
+        yCoordinateOfCrossing = yCoordinateFirstPointLine;
+    }
+
     cout << distanceFromPointToLine << " " << xCoordinateOfCrossing << " " << yCoordinateOfCrossing;
+
     return 0;
 }
