@@ -10,7 +10,7 @@ int main() {
 
     string resultNumber;
 
-    if (number == 0){
+    if (number == 0) {
         cout << 0;
     }
 
