@@ -5,18 +5,22 @@ using namespace std;
 
 int main() {
 
-    int numberInTheInitialFrameOfReference, initialNumberSystem;
-    cin >> numberInTheInitialFrameOfReference >> initialNumberSystem;
+    int number, numberSystem;
+    cin >> number >> numberSystem;
 
-    string numberInTheAnotherFrameOfReference;
+    string resultNumber;
 
-    while (numberInTheInitialFrameOfReference != 0) {
-
-        numberInTheAnotherFrameOfReference = to_string(numberInTheInitialFrameOfReference % initialNumberSystem) +
-        numberInTheAnotherFrameOfReference;
-        numberInTheInitialFrameOfReference /= initialNumberSystem;
+    if (number == 0){
+        cout << 0;
     }
 
-    cout << numberInTheAnotherFrameOfReference;
+    while (number != 0) {
+
+        resultNumber = to_string(number % numberSystem) +
+                       resultNumber;
+        number /= numberSystem;
+    }
+
+    cout << resultNumber;
 
 }
