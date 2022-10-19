@@ -9,14 +9,21 @@ int main() {
 
     cin >> firstString >> secondString >> thirdString;
 
-    if (firstString < secondString && firstString < thirdString) {
-        cout << firstString;
+    if (firstString <= secondString) {
+        if (firstString < thirdString) {
+            cout << firstString;
+        }else{
+            cout << thirdString;
+        }
+    }
 
-    } else if (secondString < firstString && secondString < thirdString) {
-        cout << secondString;
-
-    } else
-        cout << thirdString;
+    if (secondString < firstString) {
+        if (secondString <= thirdString) {
+            cout << secondString;
+        }else{
+            cout << thirdString;
+        }
+    }
 
     return 0;
 }
