@@ -1,24 +1,23 @@
 #include <iostream>
 
-
 using namespace std;
 
 int main() {
 
-    int amountDays;
-    cin >> amountDays;
-    int temperatureValues[amountDays];
+    int daysCount;
+    cin >> daysCount;
+    int temperatureValues[daysCount];
     int sumValues = 0;
 
-    for (int i = 0; i < amountDays; i++) {
+    for (int i = 0; i < daysCount; i++) {
         cin >> temperatureValues[i];
         sumValues += temperatureValues[i];
     }
 
-    int average = sumValues / amountDays;
+    int average = sumValues / daysCount;
     int amountDaysMoreAverage = 0;
 
-    for (int i = 0; i < amountDays; i++) {
+    for (int i = 0; i < daysCount; i++) {
         if (temperatureValues[i] > average) {
             amountDaysMoreAverage++;
         }
@@ -27,13 +26,12 @@ int main() {
     int temperatureMoreAverage[amountDaysMoreAverage];
     int ordinalNumber = 0;
 
-    for (int i = 0; i < amountDays; i++) {
+    for (int i = 0; i < daysCount; i++) {
         if (temperatureValues[i] > average) {
             temperatureMoreAverage[ordinalNumber] = i;
             ordinalNumber++;
         }
     }
-
 
     cout << amountDaysMoreAverage << endl;
 
@@ -41,4 +39,5 @@ int main() {
         cout << temperatureMoreAverage[i] << " ";
     }
 
+    return 0;
 }
