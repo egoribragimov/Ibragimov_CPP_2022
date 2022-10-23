@@ -8,7 +8,6 @@ int main() {
     int minute = (60 - reverseMinute) % 60;
     int hour = (12 - reverseHour) % 12;
 
-
     cout << hour << " " << minute;
 
     return 0;
