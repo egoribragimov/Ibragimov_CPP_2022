@@ -5,15 +5,11 @@ using namespace std;
 int main() {
     int reverseMinute, reverseHour;
     cin >> reverseHour >> reverseMinute;
-    int minute = 60 - reverseMinute;
-    int hour = 12 - reverseHour;
+    int minute = abs(60 - reverseMinute);
+    int hour = abs(12 - reverseHour);
 
-    if (minute == 60) {
+    if(reverseMinute == 0) {
         minute = 0;
-    }
-
-    if (hour == 12) {
-        hour = 0;
     }
 
     cout << hour << " " << minute;
