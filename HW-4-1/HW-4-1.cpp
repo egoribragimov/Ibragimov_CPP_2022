@@ -13,7 +13,7 @@ int main() {
 
         if (word[i] == word[word.length() - i - 1]) {
             coincidences++;
-        }
+        } else break;
     }
 
     if (coincidences == word.length()) {
