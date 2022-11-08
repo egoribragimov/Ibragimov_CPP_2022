@@ -8,6 +8,7 @@ int main() {
 
     string word, minimalPalindrom = "~~~~~~~~~~~~~";
     cin >> word;
+    bool presenceOfPalindromeOfTwoSymbols;
 
     for (int i = 0; i < word.length(); i++) {
 
@@ -16,13 +17,22 @@ int main() {
 
             if (palindrom < minimalPalindrom) {
                 minimalPalindrom = palindrom;
+                presenceOfPalindromeOfTwoSymbols = true;
+                break;
             }
+        }
+    }
 
-        } else if (word[i] == word[i + 2]) {
-            string palindrom = word.substr(i, 3);
+    if (!presenceOfPalindromeOfTwoSymbols) {
 
-            if (palindrom < minimalPalindrom){
-                minimalPalindrom = palindrom;
+        for (int i = 0; i < word.length(); i++) {
+
+            if (word[i] == word[i + 2]) {
+                string palindrom = word.substr(i, 3);
+
+                if (palindrom < minimalPalindrom) {
+                    minimalPalindrom = palindrom;
+                }
             }
         }
     }
