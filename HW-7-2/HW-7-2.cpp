@@ -2,13 +2,9 @@
 
 using namespace std;
 
-int main() {
-    const int amountNumbers = 10;
-    int numbers[amountNumbers], variableToExchangeValues;
 
-    for (int &number: numbers) {
-        cin >> number;
-    }
+void insertionSort(int numbers[]) {
+    int variableToExchangeValues, amountNumbers = 10;
 
     for (int i = 0; i < amountNumbers; i++) {
 
@@ -18,9 +14,19 @@ int main() {
             numbers[j - 1] = variableToExchangeValues;
         }
     }
+}
 
-    for (int number : numbers) {
-        cout << number << " ";
+int main() {
+    int numbers[10];
+
+    for (int &number: numbers) {
+        cin >> number;
+    }
+
+    insertionSort(numbers);
+
+    for (int i = 0; i < 10; i++) {
+        cout << numbers[i] << " ";
     }
 
     return 0;
