@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+void bubbleSort() {
 
     const int amountNumbers = 10;
     int numbers[amountNumbers], variableToExchangeValues;
@@ -32,6 +32,11 @@ int main() {
     for (int number : numbers) {
         cout << number << " ";
     }
+
+}
+
+int main(){
+    bubbleSort();
 
     return 0;
 }
