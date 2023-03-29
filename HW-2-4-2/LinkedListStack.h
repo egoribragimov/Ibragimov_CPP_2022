@@ -1,6 +1,4 @@
 #pragma once
-#ifndef IBRAGIMOV_CPP_2022_HW_2_4_2_H
-#define IBRAGIMOV_CPP_2022_HW_2_4_2_H
 
 class LinkedListStack {
 public:
@@ -20,5 +18,3 @@ private:
     };
     Node* head;
 };
-
-#endif
