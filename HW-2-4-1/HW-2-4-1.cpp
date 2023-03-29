@@ -1,4 +1,5 @@
-#include  "HW-2-4-1.h"
+#include  "LinkedList.h"
+#include "LinkedList.cpp"
 #include <iostream>
 
 int main() {
