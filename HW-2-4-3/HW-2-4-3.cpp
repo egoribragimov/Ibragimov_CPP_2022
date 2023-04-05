@@ -1,48 +1,18 @@
-#include "HW-2-4-3.h"
+#include <iostream>
+#include "LinkedListQueue.cpp"
 
-LinkedListQueue::LinkedListQueue() {
-    front = nullptr;
-    back = nullptr;
-}
+int main() {
+    LinkedListQueue queue;
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+    queue.dequeue();
+    queue.dequeue();
+    queue.dequeue();
+    std::cout << queue.getFirst() << std::endl;
+    queue.dequeue();
+    queue.isEmpty();
 
-LinkedListQueue::~LinkedListQueue() {
-    while (!isEmpty()) {
-        dequeue();
-    }
-}
-
-void LinkedListQueue::enqueue(int value) {
-    Node* newNode = new Node{ value, nullptr };
-    if (isEmpty()) {
-        front = newNode;
-    }
-    else {
-        back->next = newNode;
-    }
-    back = newNode;
-}
-
-int LinkedListQueue::dequeue() {
-    if (isEmpty()) {
-        throw "Queue is empty";
-    }
-    int value = front->value;
-    Node* oldFront = front;
-    front = front->next;
-    delete oldFront;
-    if (front == nullptr) {
-        back = nullptr;
-    }
-    return value;
-}
-
-int LinkedListQueue::getFirst() const {
-    if (isEmpty()) {
-        throw "Queue is empty";
-    }
-    return front->value;
-}
-
-bool LinkedListQueue::isEmpty() const {
-    return front == nullptr;
+    return 0;
 }

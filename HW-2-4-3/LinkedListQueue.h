@@ -1,5 +1,6 @@
 #ifndef IBRAGIMOV_CPP_2022_HW_2_4_3_H
 #define IBRAGIMOV_CPP_2022_HW_2_4_3_H
+#pragma once
 
 class LinkedListQueue {
 public:
